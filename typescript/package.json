@@ -1,0 +1,65 @@
+{
+  "name": "@lobbytick/gamedata",
+  "version": "0.1.0",
+  "description": "Client for the LobbyTick public game-data API: game items, names in every language and icons (Minecraft, Valheim, Project Zomboid).",
+  "license": "MIT",
+  "author": "LLogWorks",
+  "homepage": "https://github.com/LLogWorks/lobbytick-sdk/tree/main/typescript#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LLogWorks/lobbytick-sdk.git",
+    "directory": "typescript"
+  },
+  "bugs": "https://github.com/LLogWorks/lobbytick-sdk/issues",
+  "keywords": [
+    "lobbytick",
+    "minecraft",
+    "valheim",
+    "project-zomboid",
+    "items",
+    "game-data",
+    "api-client"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.43",
+    "tsup": "^8.5.1",
+    "typescript": "~5.9",
+    "vitest": "^4.1.12"
+  }
+}

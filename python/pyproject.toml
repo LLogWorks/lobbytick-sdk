@@ -1,0 +1,46 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "lobbytick-gamedata"
+dynamic = ["version"]
+description = "Client for the LobbyTick public game-data API: game items, names in every language and icons (Minecraft, Valheim, Project Zomboid)."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.9"
+authors = [{ name = "LLogWorks" }]
+keywords = ["lobbytick", "minecraft", "valheim", "project-zomboid", "items", "game-data", "api-client"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Typing :: Typed",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.urls]
+Homepage = "https://github.com/LLogWorks/lobbytick-sdk/tree/main/python"
+Source = "https://github.com/LLogWorks/lobbytick-sdk"
+Issues = "https://github.com/LLogWorks/lobbytick-sdk/issues"
+Changelog = "https://github.com/LLogWorks/lobbytick-sdk/blob/main/CHANGELOG.md"
+
+[tool.hatch.version]
+path = "src/lobbytick_gamedata/_version.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/lobbytick_gamedata"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
